@@ -3,3 +3,4 @@ Pillow
 flake8
 djangorestframework
 markdown
+autopep8
