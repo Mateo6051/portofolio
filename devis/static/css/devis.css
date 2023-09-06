@@ -1,0 +1,218 @@
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+}
+h3{
+  font-weight: 500;
+  font-size: 27px;
+}
+
+h5{
+  font-weight: 500;
+  font-size: 18px;
+}
+html{
+  background-color: white;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  background: white;
+  margin : 73px;
+}
+
+.content{
+  margin: auto;
+  width: 980px;
+  background: white;
+  
+}
+
+.devis-header{
+  display: flex;
+  align-items: center;
+  margin-bottom: 66px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-box-align: center;
+  
+}
+
+.logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border : 1.5px solid #4577FF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  margin-right: 141px;
+}
+.logo{
+  padding: 32px;
+}
+
+h1{
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000;
+}
+
+.devis-info{
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  color : #808080;
+  font-style: normal;
+ 
+}
+
+.devis-client{
+  display: flex;
+  justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox; 
+  gap: 2rem;
+  margin-bottom: 68px;
+  -webkit-box-pack: center;
+}
+
+.info-container{
+  width: 20rem;
+}
+.info-container.first{
+  margin-right: 5rem;
+}
+
+
+
+table tr:last-child > td {
+  border-bottom: none;
+}
+
+
+table{ 
+  border:  2px solid #4577FF;
+  border-radius: 13px; 
+  border-spacing: 0;
+  margin-bottom: 21px;
+  background-color: #F9F9FA;
+  }
+table td, 
+table th { 
+  border-bottom:  2px solid #4577FF;
+  }
+table tr:last-child > td {
+  border-bottom: none;
+}
+
+th{
+  text-align: left;
+  font-size: 21px;
+  font-weight: 700;
+  color: #000000;
+  padding: 27px 36px;
+}
+td{
+  font-size: 18px;
+  font-weight: 300;
+  color: #999999;
+  padding: 27px 36px;
+}
+
+.tache-price{
+  color: #000000;
+}
+.tache-desc-header{
+  width: 50%;
+}
+.total-infos{
+  /*display: flex;*/
+  justify-content: flex-end;
+  background-color: #F9F9FA;
+  border:  2px solid #4577FF;
+  border-radius: 14.5216px;
+  width: 400px;
+  padding: 7px 29px;
+  color: #000000;
+  margin : 0 0 21px auto ;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-box-pack: end;
+}
+
+.total-infos-labels{
+  display: block;
+  display: -webkit-box;
+  flex-direction: column;
+  display: -webkit-box;
+  -webkit-box-pack: end;
+  -webkit-box-orient: vertical;
+  
+}
+
+.total-info{
+  width: 100%;
+}
+.total-infos-labels.end{
+  text-align: end; 
+  margin-left: 28px;
+}
+.total{
+  display: flex;
+  width: 100%;
+  margin : 50px 0 48px auto ;
+  align-items: center;
+  justify-content: flex-end;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-box-pack: end;
+}
+.total h2{
+  font-weight: 700;
+  font-size: 21.7824px;
+  margin-right: 43px;
+
+}
+
+.total span{
+  border: 2px solid #7E51FF;
+  border-radius: 29.0432px; 
+  padding: 17px 27px;
+  text-transform: uppercase;
+  color: #7E51FF;
+  font-weight: 500;
+  font-size: 21.7824px;
+}
+
+.bank-info{
+  color : #4577FF;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 27px;
+}
+.account-info{
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  box-orient: horizontal;
+  width: 100%;
+}
+.account-info div.first{
+  margin-right: 41px;
+}

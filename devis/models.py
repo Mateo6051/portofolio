@@ -1,8 +1,11 @@
 from django.db import models
 from django.dispatch import receiver
 from django.utils import timezone
+from django.conf import settings
+
 from django.db.models.signals import post_save
 # Create your models here.
+TVA = getattr(settings, "TVA", 0)
 
 
 class Tache(models.Model):
@@ -38,7 +41,7 @@ class Devis(models.Model):
     titre = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
     client = models.ForeignKey(
-        Client, on_delete=models.CASCADE, null=True, blank=True)
+        Client, on_delete=models.CASCADE, null=True, blank=True, related_name='devis')
 
     def __str__(self):
         return self.numero
@@ -53,7 +56,14 @@ class Devis(models.Model):
         return sum([t.duree for t in self.taches.all()])
 
     @ property
-    def total_price(self):
+    def prix_ttc(self):
+        total = sum([t.prix_ht for t in self.taches.all()])
+        if TVA > 0:
+            total += total * TVA / 100
+        return total
+
+    @ property
+    def prix_ht(self):
         return sum([t.prix_ht for t in self.taches.all()])
 
 

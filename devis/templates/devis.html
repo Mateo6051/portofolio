@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    {% comment %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://127.0.0.1:8000/static/css/invoice_style.css"
+    />
+    {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class ="content">
+      <section class = "devis-header">
+        <span class ="logo-container">
+          <img class ="logo" src="data:;base64,{{ logo }}" alt="logo">
+        </span>
+        <div class="devis-header-content">
+          <h1>Devis | {{devis.client}}</h1>
+          <span class ="devis-info">
+            <strong>No.</strong>
+            {{devis.numero}}
+            |
+            <strong>Date</strong>
+            {{devis.created_at|date:"d/m/Y"}}
+          </span>
+        </div>
+      </section>
+      <section class ="devis-client">
+        <div class ="info-container first">
+          <h3>De</h3>
+          <h5>Mateo Valdes</h5>
+          <span>43 Rue Emile Normandin</span>
+          <span>17000</span>
+          <span>La Rochelle</span>
+          <span>mateojvaldes60@gmail.com</span>
+        </div>
+        <div class ="info-container">
+          <h3>Pour</h3>
+          <h5>{{devis.client}}</h5>
+          <span>{{devis.client.adresse}}</span>
+          <span>{{devis.client.code_postal}} </span>
+          <span>{{devis.client.ville}}</span>
+          <span>{% if client.email %}{{devis.client.email}}{% endif %}</span>
+        </div>
+      </section>
+
+      <table class ="devis-detail">
+        <tbody>
+          <tr>
+            <th class ="tache-desc-header">Tache</th>
+            <th>Prix (en j/homme)</th>
+            <th>Duree (en j)</th>
+            <th>Total HT</th>
+          </tr>
+          {% for tache in devis.taches.all  %}
+            <tr>
+              <td>{{tache.description}}</td>
+              <td>{{tache.prix}}</td>
+              <td>{{tache.duree}}</td>
+              <td class ="tache-price">{{tache.prix_ht}}</td>
+            </tr>
+          {% endfor %}
+
+        </tbody>
+      </table>
+      <div class ="total-infos">
+        <span class ="total-infos-labels">
+          <p class ="total-info">Durée totale</p>
+          <p class ="total-info">Subtotal (HT)</p>
+          <p class ="total-info">TVA </p>
+        </span>
+        <span class ="total-infos-labels end">
+          <p class ="total-info">{{devis.total_time}} j </p>
+          <p class ="total-info">{{devis.prix_ht}} €</p>
+          <p class ="total-info">{{tva}} €</p>
+       </span>
+      </div>
+      <div class ="total">
+        <h2>TOTAL (TTC)</h2>
+        <span>{{devis.prix_ttc}} € </span>
+      </div>
+      <h3 class ="bank-info">
+       Informations bancaires
+      </h3>
+      <div class ="account-info ">
+        <div class ="first">
+            <strong>IBAN</strong>
+            <p>FR33 3000 2081 5000 0035 1421 J14</p>
+        </div>
+        <div>
+          <strong>BIC</strong>
+          <p>CRLYFRPP</p>
+        </div>
+        
+      </div>
+    </main>
+    
+    
+  </body>
+  
+
+
+  <style>
+
+    
+    
+  </style>
+</html>
